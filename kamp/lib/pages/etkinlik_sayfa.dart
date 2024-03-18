@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kamp/pages/ana_sayfa.dart';
 import 'package:kamp/pages/event_ekle.dart';
+import 'package:kamp/pages/map_sayfa.dart';
 import 'package:kamp/pages/yerler_sayfa.dart';
 
 class Etkinlik_Page extends StatefulWidget {
@@ -36,11 +37,44 @@ class _Etkinlik_PageState extends State<Etkinlik_Page> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: IconButton(
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                            ),
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            icon: const Icon(Icons.arrow_back_ios,
-                                color: Colors.white, size: 30),
+                            icon: const Icon(Icons.arrow_back,
+                                color: Colors.black54, size: 30),
+                          ),
+                        ),
+                        Positioned(
+                          top: 8,
+                          right: 8,
+                          child: IconButton(
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Map_page()),
+                              );
+                            },
+                            icon: const Icon(Icons.location_on_outlined,
+                                color: Colors.black54, size: 30),
                           ),
                         ),
                         const Positioned(
